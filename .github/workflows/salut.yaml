@@ -1,7 +1,8 @@
 name: Bonjour
 
 'on':
-  push:
+  workflow_dispatch:
+  
 
 jobs:
   Salutations:
