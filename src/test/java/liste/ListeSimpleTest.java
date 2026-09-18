@@ -49,7 +49,9 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
-        System.out.println(listeATester);
+          assertEquals(
+        "ListeSimple(Noeud(3), Noeud(2), Noeud(1))",
+        listeATester.toString());
     }
 
     @Test
@@ -114,7 +116,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
     @Test
      void supprimeTousListeVide() {
-        listeATester.supprimePremier(1);
+        listeATester.supprimeTous(1);
         assertNull(listeATester.tete);
         assertEquals(0, listeATester.getSize());
     }
