@@ -1,9 +1,7 @@
 name: Java CI with Maven - Test and package
 
 'on':
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build:
