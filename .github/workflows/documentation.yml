@@ -3,8 +3,8 @@ name: Generate Java Documentation
 'on':
   workflow_dispatch:
   pull_request:
-    types:
-      - closed
+    types: 
+     - closed
     branches:
       - main
 
@@ -30,4 +30,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/apidocs
+          publish_dir: ./target/reports/apidocs
