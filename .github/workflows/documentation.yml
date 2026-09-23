@@ -24,6 +24,11 @@ jobs:
       - name: Generate Javadoc
         run: mvn -B javadoc:javadoc -DdestDir=target/site/apidocs
 
+      - name: Check generated documentation
+        run: |
+          echo "Contents of target:"
+          find target -maxdepth 5 -type f | head -100
+
       - name: Deploy documentation
         uses: peaceiris/actions-gh-pages@v4
         with:
