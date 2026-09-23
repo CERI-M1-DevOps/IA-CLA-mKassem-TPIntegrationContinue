@@ -131,6 +131,7 @@ public class ListeSimple {
             precedentR2 = getPrecedent(r2);
             precedentR2.setSuivant(tete);
             tete = r2;
+            
         }
         else {
             precedentR1 = getPrecedent(r1);
