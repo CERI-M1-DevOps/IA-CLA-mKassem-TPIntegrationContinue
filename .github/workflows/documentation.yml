@@ -1,8 +1,9 @@
 name: Generate Java Documentation
 
 'on':
-  pull_request:
-    types: 
+     workflow_dispatch:
+     pull_request:
+     types: 
      - closed
     branches:
       - main
