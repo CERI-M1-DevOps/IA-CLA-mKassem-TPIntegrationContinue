@@ -2,7 +2,8 @@ name: Generate Java Documentation
 
 'on':
   pull_request:
-    types: closed
+    types: 
+     - closed
     branches:
       - main
 
@@ -22,19 +23,10 @@ jobs:
           distribution: 'corretto'
 
       - name: Generate Javadoc
-        run: mvn -B javadoc:javadoc -DdestDir=target/site/apidocs
+        run: mvn -B javadoc:javadoc
 
-      - name: Check generated documentation
-       run: |
-          echo "=== TARGET DIRECTORY ==="
-          ls -la target || true
-          echo "=== ALL TARGET CONTENT ==="
-          find target -type f -print || true
-          echo "=== ALL DIRECTORIES ==="
-          find target -type d -print || true
-
-     # - name: Deploy documentation
-       # uses: peaceiris/actions-gh-pages@v4
-       # with:
-         # github_token: ${{ secrets.GITHUB_TOKEN }}
-         # publish_dir: ./target/site/apidocs
+      - name: Deploy documentation
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/apidocs
