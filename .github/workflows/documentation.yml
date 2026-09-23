@@ -10,6 +10,8 @@ name: Generate Java Documentation
 
 jobs:
   documentation:
+    permissions:
+      contents: write
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
